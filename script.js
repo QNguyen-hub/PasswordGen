@@ -37,16 +37,22 @@ var smallLetters = bigLetters.map((array) => {
 
 var allChar = smallLetters.concat(bigLetters, specialchar, numbers);
 //Prompt user for option on numbers of char and what kind.
-var userInputNum = prompt("How many character for your password?");
-if (isNaN(userInputNum)) {
-  alert("Only numbers please.");
-} else {
-  var userInputSpec = prompt("Would you like special characters?");
-}
+// var userInputNum = prompt("How many character for your password?");
+// if (isNaN(userInputNum)) {
+//   alert("Only numbers please.");
+// } else {
+//   var userInputSpec = prompt("Would you like special characters?");
+// }
 
 //Generate randompassword from the Array
 function generatePassword() {
   var password = "";
+  var userInputNum = prompt("How many character for your password?");
+  if (isNaN(userInputNum)) {
+    alert("Only numbers please.");
+  } else {
+    var userInputSpec = prompt("Would you like special characters?");
+  }
   for (var i = 0; i < userInputNum; i++) {
     password += allChar[Math.floor(Math.random() * allChar.length)];
   }
